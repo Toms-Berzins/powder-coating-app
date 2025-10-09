@@ -1,0 +1,168 @@
+{
+  "hero": {
+    "badge": "Tūlītēja AI cenu aprēķināšana",
+    "title": "Saņemiet tūlītēju cenu piedāvājumu",
+    "subtitle": "Profesionāla pulverpārklājuma cena dažu sekunžu laikā. Nav gaidīšanas, nav minējumu.",
+    "trustBadges": {
+      "instant": "Tūlītējs",
+      "accurate": "Precīzs",
+      "transparent": "Pārredzams"
+    },
+    "main": {
+      "title1": "Izgatavots, lai kalpotu.",
+      "title2": "Gatavs ātri.",
+      "description": "Tūlītēji pulverpārklājuma piedāvājumi, profesionāla apdare un vienkārša apmaksa — ražots Latvijā, veidots Baltijas reģionam.",
+      "ctaPrimary": "Saņemt tūlītēju piedāvājumu",
+      "ctaSecondary": "Skatīt RAL krāsas",
+      "reassurance": "Nav slēptu maksas • Rezervējiet laiku minūšu laikā • Rīgas/Tērvetes saņemšanas opcijas",
+      "trust1": "Pilna RAL paletes noliktavā",
+      "trust2": "Partijas vai atsevišķas detaļas",
+      "trust3": "Statusa atjauninājumi ar SMS",
+      "ralColors": "RAL krāsas"
+    }
+  },
+  "quote": {
+    "form": {
+      "title": "Konfigurējiet savu piedāvājumu",
+      "steps": {
+        "dimensions": "Izmēri",
+        "material": "Materiāls",
+        "prep": "Sagatavošana",
+        "details": "Detaļas"
+      },
+      "step1": {
+        "title": "Detaļas izmēri",
+        "description": "Ievadiet detaļas izmērus milimetros",
+        "length": "Garums (mm)",
+        "lengthPlaceholder": "piemēram, 100",
+        "width": "Platums (mm)",
+        "widthPlaceholder": "piemēram, 50",
+        "height": "Augstums (mm)",
+        "heightPlaceholder": "piemēram, 25"
+      },
+      "step2": {
+        "title": "Materiāla veids",
+        "description": "Izvēlieties detaļas materiālu",
+        "aluminum": "Alumīnijs",
+        "aluminumDesc": "Viegls un korozijas izturīgs",
+        "steel": "Tērauds",
+        "steelDesc": "Izturīgs un ilgmūžīgs",
+        "stainless": "Nerūsējošais tērauds",
+        "stainlessDesc": "Premium korozijas pretestība"
+      },
+      "step3": {
+        "title": "Virsmas sagatavošana",
+        "description": "Izvēlieties nepieciešamo virsmas sagatavošanas līmeni",
+        "basic": "Pamata",
+        "basicDesc": "Viegla tīrīšana un attaukošana",
+        "standard": "Standarta",
+        "standardDesc": "Rūpīga tīrīšana un viegla slīpēšana",
+        "premium": "Premium",
+        "premiumDesc": "Pilnīga virsmas sagatavošana ar ķīmisko apstrādi"
+      },
+      "step4": {
+        "title": "Galīgās detaļas",
+        "description": "Pabeidziet piedāvājumu ar krāsu un daudzumu",
+        "color": "Krāsa (RAL)",
+        "colorPlaceholder": "piemēram, RAL 9016",
+        "quantity": "Daudzums",
+        "quantityPlaceholder": "piemēram, 10",
+        "turnaround": "Izpildes laiks (dienas)",
+        "turnaroundPlaceholder": "piemēram, 5"
+      },
+      "buttons": {
+        "previous": "Atpakaļ",
+        "next": "Tālāk",
+        "calculate": "Aprēķināt cenu"
+      },
+      "validation": {
+        "required": "Šis lauks ir obligāts",
+        "minLength": "Garumam jābūt vismaz {{min}}mm",
+        "minWidth": "Platumam jābūt vismaz {{min}}mm",
+        "minHeight": "Augstumam jābūt vismaz {{min}}mm",
+        "minQuantity": "Daudzumam jābūt vismaz {{min}}",
+        "minTurnaround": "Izpildes laikam jābūt vismaz {{min}} dienas"
+      }
+    },
+    "price": {
+      "title": "Jūsu piedāvājums",
+      "calculating": "Aprēķina...",
+      "breakdown": "Cenas sadalījums",
+      "basePrice": "Pamata cena",
+      "prepSurcharge": "Sagatavošanas piemaksa",
+      "rushSurcharge": "Steidzamības piemaksa",
+      "total": "Kopā",
+      "emptyTitle": "Konfigurējiet savu piedāvājumu",
+      "emptyDescription": "Aizpildiet formu, lai saņemtu tūlītēju cenu",
+      "trustBadges": {
+        "instant": "Tūlītējs",
+        "accurate": "Precīzs",
+        "live": "Tiešsaistes cenas"
+      },
+      "continueToCheckout": "Turpināt uz apmaksu"
+    }
+  },
+  "checkout": {
+    "title": "Pabeidziet pasūtījumu",
+    "subtitle": "Droša apmaksa, ko nodrošina Stripe",
+    "trustBadges": {
+      "secured": "SSL aizsargāts",
+      "stripe": "Stripe verificēts",
+      "support": "24/7 atbalsts"
+    },
+    "backToQuote": "← Atpakaļ uz piedāvājumu",
+    "steps": {
+      "contact": "Kontaktinformācija",
+      "payment": "Maksājums"
+    },
+    "contact": {
+      "title": "Kontaktinformācija",
+      "description": "Mēs izmantosim šo informāciju, lai sazinātos ar jums par pasūtījumu",
+      "email": "E-pasts",
+      "emailPlaceholder": "jusu.epasts@uznemums.lv",
+      "name": "Pilns vārds",
+      "namePlaceholder": "Jānis Bērziņš",
+      "phone": "Tālruņa numurs",
+      "phonePlaceholder": "+371 2000 0000",
+      "company": "Uzņēmuma nosaukums (neobligāti)",
+      "companyPlaceholder": "SIA \"Piemērs\"",
+      "address": "Ielas adrese",
+      "addressPlaceholder": "Brīvības iela 123",
+      "city": "Pilsēta",
+      "cityPlaceholder": "Rīga",
+      "postalCode": "Pasta indeks",
+      "postalCodePlaceholder": "LV-1001",
+      "country": "Valsts",
+      "continueButton": "Turpināt uz maksājumu"
+    },
+    "payment": {
+      "title": "Maksājuma detaļas",
+      "description": "Jūsu maksājuma informācija ir šifrēta un droša",
+      "placeholder": "Maksājuma integrācija tiek pabeigta šeit",
+      "processing": "Apstrādā jūsu maksājumu...",
+      "completeButton": "Pabeigt maksājumu"
+    },
+    "orderSummary": {
+      "title": "Pasūtījuma kopsavilkums",
+      "material": "Materiāls",
+      "dimensions": "Izmēri",
+      "prepLevel": "Sagatavošanas līmenis",
+      "color": "Krāsa",
+      "quantity": "Daudzums",
+      "turnaround": "Izpildes laiks",
+      "days": "dienas",
+      "subtotal": "Starpsumma",
+      "tax": "Nodokļi (aptuveni)",
+      "total": "Kopā"
+    }
+  },
+  "common": {
+    "loading": "Ielādē...",
+    "error": "Radās kļūda",
+    "success": "Veiksmīgi!",
+    "currency": {
+      "usd": "USD",
+      "eur": "EUR"
+    }
+  }
+}

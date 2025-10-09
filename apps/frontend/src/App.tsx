@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import HeroSection from './components/HeroSection'
 import QuoteSection from './components/QuoteSection'
 import CheckoutSection from './components/CheckoutSection'
+import { LanguageSwitcher } from './components/LanguageSwitcher'
 import type { QuoteOutput } from './lib/quote-schema'
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <main className="min-h-screen">
+      <LanguageSwitcher />
       {view === 'quote' && (
         <>
           <HeroSection />

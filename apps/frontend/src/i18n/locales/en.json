@@ -1,0 +1,168 @@
+{
+  "hero": {
+    "badge": "Instant AI-Powered Pricing",
+    "title": "Get Your Instant Quote",
+    "subtitle": "Professional powder coating pricing in seconds. No waiting, no guesswork.",
+    "trustBadges": {
+      "instant": "Instant",
+      "accurate": "Accurate",
+      "transparent": "Transparent"
+    },
+    "main": {
+      "title1": "Built to last.",
+      "title2": "Ready fast.",
+      "description": "Instant powder-coating quotes, pro finishes, and simple checkout—made in Latvia, built for the Baltics.",
+      "ctaPrimary": "Get Instant Quote",
+      "ctaSecondary": "See RAL Colors",
+      "reassurance": "No hidden fees • Book a slot in minutes • Riga/Tērvete pickup options",
+      "trust1": "Full RAL palette in stock",
+      "trust2": "Batch or single parts",
+      "trust3": "Status updates by SMS",
+      "ralColors": "RAL Colors"
+    }
+  },
+  "quote": {
+    "form": {
+      "title": "Configure Your Quote",
+      "steps": {
+        "dimensions": "Dimensions",
+        "material": "Material",
+        "prep": "Prep Level",
+        "details": "Details"
+      },
+      "step1": {
+        "title": "Part Dimensions",
+        "description": "Enter the dimensions of your part in millimeters",
+        "length": "Length (mm)",
+        "lengthPlaceholder": "e.g., 100",
+        "width": "Width (mm)",
+        "widthPlaceholder": "e.g., 50",
+        "height": "Height (mm)",
+        "heightPlaceholder": "e.g., 25"
+      },
+      "step2": {
+        "title": "Material Type",
+        "description": "Select the material of your part",
+        "aluminum": "Aluminum",
+        "aluminumDesc": "Lightweight and corrosion-resistant",
+        "steel": "Steel",
+        "steelDesc": "Strong and durable",
+        "stainless": "Stainless Steel",
+        "stainlessDesc": "Premium corrosion resistance"
+      },
+      "step3": {
+        "title": "Surface Preparation",
+        "description": "Choose the level of surface preparation needed",
+        "basic": "Basic",
+        "basicDesc": "Light cleaning and degreasing",
+        "standard": "Standard",
+        "standardDesc": "Thorough cleaning and light sanding",
+        "premium": "Premium",
+        "premiumDesc": "Complete surface preparation with chemical treatment"
+      },
+      "step4": {
+        "title": "Final Details",
+        "description": "Complete your quote with color and quantity",
+        "color": "Color (RAL)",
+        "colorPlaceholder": "e.g., RAL 9016",
+        "quantity": "Quantity",
+        "quantityPlaceholder": "e.g., 10",
+        "turnaround": "Turnaround Time (days)",
+        "turnaroundPlaceholder": "e.g., 5"
+      },
+      "buttons": {
+        "previous": "Previous",
+        "next": "Next",
+        "calculate": "Calculate Quote"
+      },
+      "validation": {
+        "required": "This field is required",
+        "minLength": "Length must be at least {{min}}mm",
+        "minWidth": "Width must be at least {{min}}mm",
+        "minHeight": "Height must be at least {{min}}mm",
+        "minQuantity": "Quantity must be at least {{min}}",
+        "minTurnaround": "Turnaround time must be at least {{min}} days"
+      }
+    },
+    "price": {
+      "title": "Your Quote",
+      "calculating": "Calculating...",
+      "breakdown": "Price Breakdown",
+      "basePrice": "Base Price",
+      "prepSurcharge": "Prep Surcharge",
+      "rushSurcharge": "Rush Surcharge",
+      "total": "Total",
+      "emptyTitle": "Configure your quote",
+      "emptyDescription": "Fill in the form to get your instant pricing",
+      "trustBadges": {
+        "instant": "Instant",
+        "accurate": "Accurate",
+        "live": "Live Pricing"
+      },
+      "continueToCheckout": "Continue to Checkout"
+    }
+  },
+  "checkout": {
+    "title": "Complete Your Order",
+    "subtitle": "Secure checkout powered by Stripe",
+    "trustBadges": {
+      "secured": "SSL Secured",
+      "stripe": "Stripe Verified",
+      "support": "24/7 Support"
+    },
+    "backToQuote": "← Back to Quote",
+    "steps": {
+      "contact": "Contact Info",
+      "payment": "Payment"
+    },
+    "contact": {
+      "title": "Contact Information",
+      "description": "We'll use this to contact you about your order",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "name": "Full Name",
+      "namePlaceholder": "John Doe",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+1 (555) 123-4567",
+      "company": "Company Name (optional)",
+      "companyPlaceholder": "Acme Corp",
+      "address": "Street Address",
+      "addressPlaceholder": "123 Main Street",
+      "city": "City",
+      "cityPlaceholder": "New York",
+      "postalCode": "Postal Code",
+      "postalCodePlaceholder": "10001",
+      "country": "Country",
+      "continueButton": "Continue to Payment"
+    },
+    "payment": {
+      "title": "Payment Details",
+      "description": "Your payment information is encrypted and secure",
+      "placeholder": "Complete payment integration here",
+      "processing": "Processing your payment...",
+      "completeButton": "Complete Payment"
+    },
+    "orderSummary": {
+      "title": "Order Summary",
+      "material": "Material",
+      "dimensions": "Dimensions",
+      "prepLevel": "Prep Level",
+      "color": "Color",
+      "quantity": "Quantity",
+      "turnaround": "Turnaround",
+      "days": "days",
+      "subtotal": "Subtotal",
+      "tax": "Tax (estimated)",
+      "total": "Total"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success!",
+    "currency": {
+      "usd": "USD",
+      "eur": "EUR"
+    }
+  }
+}

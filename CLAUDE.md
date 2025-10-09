@@ -235,3 +235,89 @@ powdercoater/
 - Mobile optimization (59% of ecommerce sales in 2025)
 - Security assurances (reduce 25% abandonment rate)
 - Payment method logos (visual trust indicators)
+
+## Internationalization (i18n)
+
+### Languages Supported
+- **English (EN)** - Default language
+- **Latvian (LV)** - Full translation support
+
+### i18n Architecture
+- **Library**: react-i18next with i18next-browser-languagedetector
+- **Configuration**: `apps/frontend/src/i18n/config.ts`
+- **Translations**: JSON files in `apps/frontend/src/i18n/locales/`
+  - `en.json` - English translations
+  - `lv.json` - Latvian translations
+- **Language Detection**: Automatic detection from localStorage or browser settings
+- **Persistence**: Selected language saved to localStorage
+- **Fallback**: Falls back to English if translation key is missing
+
+### Translation Structure
+```
+{
+  "hero": { /* Hero section translations */ },
+  "quote": {
+    "form": { /* Quote form step-by-step wizard */ },
+    "price": { /* Price display component */ }
+  },
+  "checkout": {
+    "contact": { /* Contact information form */ },
+    "payment": { /* Payment section */ },
+    "orderSummary": { /* Order summary */ }
+  },
+  "common": { /* Shared translations */ }
+}
+```
+
+### Language Switcher
+- **Component**: `apps/frontend/src/components/LanguageSwitcher.tsx`
+- **Position**: Fixed top-right corner (z-index: 50)
+- **Interaction**: Click to toggle between EN ↔ LV
+- **Animation**: Framer Motion with hover/tap effects
+- **Visual**: Shows current language → next language (e.g., "EN → LV")
+
+### Usage in Components
+```typescript
+import { useTranslation } from 'react-i18next'
+
+export function MyComponent() {
+  const { t } = useTranslation()
+
+  return (
+    <div>
+      <h1>{t('hero.title')}</h1>
+      <p>{t('hero.subtitle')}</p>
+    </div>
+  )
+}
+```
+
+### Adding New Translations
+1. Add translation keys to both `en.json` and `lv.json`
+2. Use consistent nesting structure (e.g., `section.component.element`)
+3. Import `useTranslation` hook in component
+4. Replace hardcoded strings with `t('translation.key')`
+5. Test language switching in browser
+6. Run typecheck: `npm run typecheck`
+
+### Translated Components
+- ✅ HeroSection - Main hero banner with titles, CTAs, trust signals, RAL badge
+- ✅ QuoteSection - Quote section introduction badge, title, subtitle
+- ✅ QuoteForm - Full 4-step wizard with all labels and validation
+- ✅ QuotePriceDisplay - Price breakdown and trust badges
+- ✅ CheckoutSection - Contact info, payment, order summary (ready for integration)
+- ✅ LanguageSwitcher - Language toggle component
+
+### i18n Best Practices
+- **Key naming**: Use descriptive, hierarchical keys (e.g., `quote.form.step1.title`)
+- **Placeholders**: Use interpolation for dynamic values: `t('key', { value: dynamicValue })`
+- **Pluralization**: Use i18next plural rules when needed
+- **Context**: Keep translations in context-specific namespaces
+- **Consistency**: Maintain consistent terminology across all translations
+- **Testing**: Always test both languages after adding new translations
+
+### Performance Considerations
+- Translations loaded once at app initialization
+- No HTTP requests for translations (bundled in app)
+- Minimal bundle size impact (~10KB for both languages)
+- No re-renders when switching languages (only text content updates)
