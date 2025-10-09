@@ -1,0 +1,106 @@
+{
+  "en": {
+    "home": {
+      "title": "Powder Coating in Latvia – Instant Quotes & Fast Booking",
+      "metaDescription": "Get an instant powder-coating quote. Durable RAL finishes, pro prep, simple checkout. Riga/Tērvete logistics.",
+      "h1": "Built to last. Ready fast.",
+      "keywords": [
+        "powder coating Latvia",
+        "instant quote",
+        "RAL colors",
+        "industrial coating",
+        "Riga powder coating",
+        "durable finish",
+        "powder coating Tērvete",
+        "metal finishing Latvia",
+        "coating services Baltics"
+      ],
+      "openGraph": {
+        "title": "Powder Coating Latvia – Instant Quotes & Fast Booking",
+        "description": "Professional powder coating with instant pricing. Made in Latvia for the Baltics.",
+        "type": "website",
+        "image": "/og-image-en.jpg"
+      }
+    },
+    "about": {
+      "title": "About Us – Powder Coating Specialists in Latvia",
+      "metaDescription": "Family-run powder coating in Riga/Tērvete. Quality finishes, fast turnaround, and sustainable practices for the Baltics.",
+      "h1": "We're craftsmen who respect your time.",
+      "openGraph": {
+        "title": "About Our Powder Coating Services",
+        "description": "Quality-focused powder coating from Latvia. Fast, durable, and built for Baltic conditions.",
+        "type": "website",
+        "image": "/og-about-en.jpg"
+      }
+    },
+    "quote": {
+      "title": "Get Instant Quote – Powder Coating Calculator",
+      "metaDescription": "Calculate your powder coating price instantly. Enter dimensions, choose color, see live pricing in seconds.",
+      "h1": "Your part, your finish—price in seconds."
+    },
+    "colors": {
+      "title": "RAL Color Chart – Powder Coating Colors Available",
+      "metaDescription": "Browse our full RAL color palette. Popular blacks, whites, and textures in stock. Custom colors available.",
+      "h1": "Full RAL Palette Available"
+    }
+  },
+  "lv": {
+    "home": {
+      "title": "Pulverkrāsošana Latvijā – Tūlītēji piedāvājumi un ātra rezervācija",
+      "metaDescription": "Saņemiet tūlītēju pulverkrāsošanas piedāvājumu. Izturīgi RAL pārklājumi, profesionāla sagatavošana, vienkārša apmaksa. Rīga/Tērvete loģistika.",
+      "h1": "Ilgmūžīgi pārklājumi. Gatavs ātri.",
+      "keywords": [
+        "pulverkrāsošana Latvijā",
+        "tūlītējs piedāvājums",
+        "RAL krāsas",
+        "industriālā krāsošana",
+        "pulverkrāsošana Rīgā",
+        "izturīgs pārklājums",
+        "pulverkrāsošana Tērvetē",
+        "metāla apstrāde Latvijā",
+        "krāsošanas pakalpojumi Baltijā"
+      ],
+      "openGraph": {
+        "title": "Pulverkrāsošana Latvijā – Tūlītēji piedāvājumi",
+        "description": "Profesionāla pulverkrāsošana ar tūlītēju cenu. Radīts Latvijā Baltijas tirgum.",
+        "type": "website",
+        "image": "/og-image-lv.jpg"
+      }
+    },
+    "about": {
+      "title": "Par mums – Pulverkrāsošanas speciālisti Latvijā",
+      "metaDescription": "Ģimenes uzņēmums Rīgā/Tērvetē. Kvalitatīvi pārklājumi, ātrs izpildes laiks un ilgtspējīgas prakses Baltijas valstīm.",
+      "h1": "Mēs esam amatnieki, kas respektē jūsu laiku.",
+      "openGraph": {
+        "title": "Par mūsu pulverkrāsošanas pakalpojumiem",
+        "description": "Uz kvalitāti orientēta pulverkrāsošana no Latvijas. Ātra, izturīga un veidota Baltijas apstākļiem.",
+        "type": "website",
+        "image": "/og-about-lv.jpg"
+      }
+    },
+    "quote": {
+      "title": "Saņemt tūlītēju piedāvājumu – Pulverkrāsošanas kalkulators",
+      "metaDescription": "Aprēķiniet pulverkrāsošanas cenu uzreiz. Ievadiet izmērus, izvēlieties krāsu, redziet cenu sekundēs.",
+      "h1": "Jūsu detaļa, jūsu apdare—cena sekundēs."
+    },
+    "colors": {
+      "title": "RAL krāsu karte – Pieejamās pulverkrāsošanas krāsas",
+      "metaDescription": "Pārlūkojiet mūsu pilno RAL krāsu paleti. Populārās melnas, baltas un tekstūras noliktavā. Pielāgotas krāsas pieejamas.",
+      "h1": "Pilna RAL palete pieejama"
+    }
+  },
+  "business": {
+    "en": {
+      "name": "PowderCoater Latvia",
+      "shortDescription": "Instant powder-coating quotes, pro prep, and durable RAL finishes. Fast booking, simple checkout, Riga/Tērvete logistics. Built for Baltic weather.",
+      "category": "Powder Coating Service",
+      "locations": ["Riga", "Tērvete"]
+    },
+    "lv": {
+      "name": "PowderCoater Latvia",
+      "shortDescription": "Zibenīgas pulverkrāsošanas cenas, profesionāla sagatavošana un izturīgi RAL pārklājumi. Ātra rezervācija, vienkārša apmaksa, loģistika Rīga/Tērvete. Baltijas laikapstākļiem.",
+      "category": "Pulverkrāsošanas pakalpojums",
+      "locations": ["Rīga", "Tērvete"]
+    }
+  }
+}

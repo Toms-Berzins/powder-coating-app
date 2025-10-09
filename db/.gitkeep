@@ -1,0 +1,2 @@
+# Database migrations directory
+# Migrations will be created using: sqlx migrate add <name>

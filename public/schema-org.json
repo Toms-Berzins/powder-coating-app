@@ -1,0 +1,208 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://powdercoater.lv/#organization",
+      "name": "PowderCoater Latvia",
+      "url": "https://powdercoater.lv",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://powdercoater.lv/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Professional powder coating services in Latvia with instant online quotes, full RAL color range, and fast turnaround for the Baltic region.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Riga",
+        "addressRegion": "Rīga",
+        "addressCountry": "LV"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Latvia"
+        },
+        {
+          "@type": "Country",
+          "name": "Estonia"
+        },
+        {
+          "@type": "Country",
+          "name": "Lithuania"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "availableLanguage": ["English", "Latvian"]
+      },
+      "sameAs": [
+        "https://www.instagram.com/powdercoater.lv",
+        "https://www.facebook.com/powdercoater.lv",
+        "https://www.linkedin.com/company/powdercoater-lv"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://powdercoater.lv/#service",
+      "serviceType": "Powder Coating",
+      "provider": {
+        "@id": "https://powdercoater.lv/#organization"
+      },
+      "name": "Powder Coating Services",
+      "description": "Professional powder coating with instant online quotes, full RAL color palette, and quality-controlled finishes for metal parts of all sizes.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Latvia"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Powder Coating Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Standard Powder Coating",
+              "description": "Professional powder coating with RAL color selection"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Rush Powder Coating",
+              "description": "Expedited powder coating service with faster turnaround"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Surface Preparation",
+              "description": "Cleaning, blasting, masking, and priming services"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://powdercoater.lv/#website",
+      "url": "https://powdercoater.lv",
+      "name": "PowderCoater Latvia",
+      "description": "Instant powder coating quotes and professional finishing services in Latvia",
+      "publisher": {
+        "@id": "https://powdercoater.lv/#organization"
+      },
+      "inLanguage": ["en", "lv"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://powdercoater.lv/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://powdercoater.lv/#webpage",
+      "url": "https://powdercoater.lv",
+      "name": "Powder Coating in Latvia – Instant Quotes & Fast Booking",
+      "description": "Get an instant powder-coating quote. Durable RAL finishes, pro prep, simple checkout. Riga/Tērvete logistics.",
+      "isPartOf": {
+        "@id": "https://powdercoater.lv/#website"
+      },
+      "about": {
+        "@id": "https://powdercoater.lv/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://powdercoater.lv/og-image-en.jpg"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How fast is the quote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Seconds—your price updates as you change size, color, or deadline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you handle large parts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Tell us dimensions; we'll confirm handling/cure window."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What colors are available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Full RAL palette, with popular blacks, whites, and textures in stock."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the lead time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depends on prep and volume; available slots are visible during checkout."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What payment methods do you accept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Card, Apple Pay, Google Pay, or invoice. VAT invoices are provided for all orders."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "name": "PowderCoater Latvia - Riga",
+      "image": "https://powdercoater.lv/locations/riga.jpg",
+      "@id": "https://powdercoater.lv/locations/riga",
+      "url": "https://powdercoater.lv",
+      "telephone": "+371-XXXXXXXX",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "TBD",
+        "addressLocality": "Riga",
+        "postalCode": "LV-XXXX",
+        "addressCountry": "LV"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 56.9496,
+        "longitude": 24.1052
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/powdercoater.lv",
+        "https://www.facebook.com/powdercoater.lv"
+      ]
+    }
+  ]
+}

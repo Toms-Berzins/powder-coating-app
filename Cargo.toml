@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "apps/api",
+    "crates/quote_core",
+]
+resolver = "2"
