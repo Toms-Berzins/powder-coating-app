@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import HeroSection from './components/HeroSection'
 import QuoteSection from './components/QuoteSection'
+import PortfolioSection from './components/PortfolioSection'
 import CheckoutSection from './components/CheckoutSection'
 import { LanguageSwitcher } from './components/LanguageSwitcher'
 import type { QuoteOutput } from './lib/quote-schema'
@@ -38,6 +39,7 @@ function App() {
         <>
           <HeroSection />
           <QuoteSection />
+          <PortfolioSection />
         </>
       )}
       {view === 'checkout' && checkoutQuote && (

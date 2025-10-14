@@ -321,3 +321,4 @@ export function MyComponent() {
 - No HTTP requests for translations (bundled in app)
 - Minimal bundle size impact (~10KB for both languages)
 - No re-renders when switching languages (only text content updates)
+- /clear

@@ -4,35 +4,35 @@
       "command": "npx",
       "args": ["-y", "@stripe/mcp", "--tools=all"],
       "env": {
-        "STRIPE_SECRET_KEY": "your_stripe_secret_key_here"
+        "STRIPE_SECRET_KEY": "sk_test_YOUR_STRIPE_SECRET_KEY_HERE"
       }
     },
     "brave-search": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-brave-search"],
       "env": {
-        "BRAVE_API_KEY": "your_brave_api_key_here"
+        "BRAVE_API_KEY": "YOUR_BRAVE_API_KEY_HERE"
       }
     },
     "exa": {
       "command": "npx",
       "args": ["-y", "@exa/mcp-server"],
       "env": {
-        "EXA_API_KEY": "your_exa_api_key_here"
+        "EXA_API_KEY": "YOUR_EXA_API_KEY_HERE"
       }
     },
     "firecrawl": {
       "command": "npx",
       "args": ["-y", "@mendable/firecrawl-mcp"],
       "env": {
-        "FIRECRAWL_API_KEY": "your_firecrawl_api_key_here"
+        "FIRECRAWL_API_KEY": "YOUR_FIRECRAWL_API_KEY_HERE"
       }
     },
     "github": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-github"],
       "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "your_github_token_here"
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_PAT_HERE"
       }
     }
   }
