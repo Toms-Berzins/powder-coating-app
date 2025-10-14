@@ -156,6 +156,45 @@
       "total": "Total"
     }
   },
+  "portfolio": {
+    "title": "Our Work",
+    "subtitle": "See the transformation. Browse our powder coating portfolio.",
+    "categories": {
+      "all": "All Projects",
+      "automotive": "Automotive",
+      "furniture": "Furniture",
+      "industrial": "Industrial",
+      "decorative": "Decorative"
+    },
+    "filters": {
+      "title": "Filter by Category",
+      "showing": "Showing {{count}} projects"
+    },
+    "card": {
+      "viewDetails": "View Details",
+      "beforeAfter": "Before & After",
+      "material": "Material",
+      "color": "Color",
+      "prep": "Prep Level"
+    },
+    "modal": {
+      "close": "Close",
+      "projectDetails": "Project Details",
+      "before": "Before",
+      "after": "After",
+      "specifications": "Specifications",
+      "tags": "Tags"
+    },
+    "materials": {
+      "aluminum": "Aluminum",
+      "steel": "Steel",
+      "stainless-steel": "Stainless Steel"
+    },
+    "empty": {
+      "title": "No projects found",
+      "description": "Try selecting a different category"
+    }
+  },
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",

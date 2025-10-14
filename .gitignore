@@ -63,7 +63,7 @@ verify-*.js
 
 # Claude Code settings (contains sensitive data like tokens)
 .claude/settings.local.json
-# .mcp.json
+.mcp.json
 
 # Windows reserved filenames (these can't be committed)
 nul

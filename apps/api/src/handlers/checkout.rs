@@ -4,8 +4,14 @@ use axum::{
     Json,
 };
 use serde::{Deserialize, Serialize};
+use stripe::{
+    CheckoutSession, CheckoutSessionMode, Client,
+    CreateCheckoutSession, CreateCheckoutSessionLineItems,
+    CreateCheckoutSessionLineItemsPriceData,
+    CreateCheckoutSessionLineItemsPriceDataProductData,
+    Currency,
+};
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 use crate::AppState;
 
@@ -15,7 +21,8 @@ pub struct CreateCheckoutSessionRequest {
     pub quote_id: String,
     /// Total amount in cents (e.g., 5000 = $50.00)
     pub total_amount: i64,
-    /// Currency code (e.g., "usd")
+    /// Currency code (e.g., "usd") - TODO: Use for multi-currency support
+    #[allow(dead_code)]
     pub currency: String,
     /// Customer email
     pub customer_email: Option<String>,
@@ -95,23 +102,23 @@ pub async fn create_checkout_session(
             std::env::var("FRONTEND_URL").unwrap_or_else(|_| "http://localhost:5173".to_string())));
 
     // Create Stripe checkout session
-    let client = stripe_rust::Client::new(state.stripe_secret_key);
+    let client = Client::new(state.stripe_secret_key);
 
     // Build line items
     let mut line_items = Vec::new();
 
     // Base price
-    line_items.push(stripe_rust::CheckoutSessionLineItem {
-        price_data: Some(stripe_rust::CheckoutSessionLineItemPriceData {
-            currency: payload.currency.clone(),
+    line_items.push(CreateCheckoutSessionLineItems {
+        price_data: Some(CreateCheckoutSessionLineItemsPriceData {
+            currency: Currency::USD,
             unit_amount: Some(payload.quote_details.base_price),
-            product_data: stripe_rust::CheckoutSessionLineItemPriceDataProductData {
+            product_data: Some(CreateCheckoutSessionLineItemsPriceDataProductData {
                 name: format!("Powder Coating - {} ({})",
                     payload.quote_details.material,
                     payload.quote_details.prep_level),
                 description: Some(format!("Quantity: {}", payload.quote_details.quantity)),
                 ..Default::default()
-            },
+            }),
             ..Default::default()
         }),
         quantity: Some(1),
@@ -120,14 +127,14 @@ pub async fn create_checkout_session(
 
     // Prep surcharge if applicable
     if payload.quote_details.prep_surcharge > 0 {
-        line_items.push(stripe_rust::CheckoutSessionLineItem {
-            price_data: Some(stripe_rust::CheckoutSessionLineItemPriceData {
-                currency: payload.currency.clone(),
+        line_items.push(CreateCheckoutSessionLineItems {
+            price_data: Some(CreateCheckoutSessionLineItemsPriceData {
+                currency: Currency::USD,
                 unit_amount: Some(payload.quote_details.prep_surcharge),
-                product_data: stripe_rust::CheckoutSessionLineItemPriceDataProductData {
+                product_data: Some(CreateCheckoutSessionLineItemsPriceDataProductData {
                     name: "Surface Preparation Surcharge".to_string(),
                     ..Default::default()
-                },
+                }),
                 ..Default::default()
             }),
             quantity: Some(1),
@@ -137,14 +144,14 @@ pub async fn create_checkout_session(
 
     // Rush surcharge if applicable
     if payload.quote_details.rush_surcharge > 0 {
-        line_items.push(stripe_rust::CheckoutSessionLineItem {
-            price_data: Some(stripe_rust::CheckoutSessionLineItemPriceData {
-                currency: payload.currency.clone(),
+        line_items.push(CreateCheckoutSessionLineItems {
+            price_data: Some(CreateCheckoutSessionLineItemsPriceData {
+                currency: Currency::USD,
                 unit_amount: Some(payload.quote_details.rush_surcharge),
-                product_data: stripe_rust::CheckoutSessionLineItemPriceDataProductData {
+                product_data: Some(CreateCheckoutSessionLineItemsPriceDataProductData {
                     name: "Rush Order Surcharge (+50%)".to_string(),
                     ..Default::default()
-                },
+                }),
                 ..Default::default()
             }),
             quantity: Some(1),
@@ -153,9 +160,9 @@ pub async fn create_checkout_session(
     }
 
     // Create the session
-    let mut params = stripe_rust::CreateCheckoutSession::new();
+    let mut params = CreateCheckoutSession::new();
     params.line_items = Some(line_items);
-    params.mode = Some(stripe_rust::CheckoutSessionMode::Payment);
+    params.mode = Some(CheckoutSessionMode::Payment);
     params.success_url = Some(&success_url);
     params.cancel_url = Some(&cancel_url);
 
@@ -171,7 +178,7 @@ pub async fn create_checkout_session(
     params.metadata = Some(metadata);
 
     // Create session via Stripe API
-    match stripe_rust::CheckoutSession::create(&client, params).await {
+    match CheckoutSession::create(&client, params).await {
         Ok(session) => {
             tracing::info!("Created Stripe checkout session: {}", session.id);
 

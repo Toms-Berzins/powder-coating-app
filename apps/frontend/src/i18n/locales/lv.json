@@ -156,6 +156,45 @@
       "total": "Kopā"
     }
   },
+  "portfolio": {
+    "title": "Mūsu Darbi",
+    "subtitle": "Skatiet pārvērtību. Pārlūkojiet mūsu pulverpārklājuma portfeli.",
+    "categories": {
+      "all": "Visi projekti",
+      "automotive": "Automašīnas",
+      "furniture": "Mēbeles",
+      "industrial": "Rūpnieciskais",
+      "decorative": "Dekoratīvais"
+    },
+    "filters": {
+      "title": "Filtrēt pēc kategorijas",
+      "showing": "Rāda {{count}} projektus"
+    },
+    "card": {
+      "viewDetails": "Skatīt detaļas",
+      "beforeAfter": "Pirms un pēc",
+      "material": "Materiāls",
+      "color": "Krāsa",
+      "prep": "Sagatavošanas līmenis"
+    },
+    "modal": {
+      "close": "Aizvērt",
+      "projectDetails": "Projekta detaļas",
+      "before": "Pirms",
+      "after": "Pēc",
+      "specifications": "Specifikācijas",
+      "tags": "Tagi"
+    },
+    "materials": {
+      "aluminum": "Alumīnijs",
+      "steel": "Tērauds",
+      "stainless-steel": "Nerūsējošais tērauds"
+    },
+    "empty": {
+      "title": "Projekti nav atrasti",
+      "description": "Mēģiniet izvēlēties citu kategoriju"
+    }
+  },
   "common": {
     "loading": "Ielādē...",
     "error": "Radās kļūda",
