@@ -8,7 +8,7 @@
  * - Optimized for conversion with Stripe Checkout
  */
 
-import { loadStripe, Stripe } from '@stripe/stripe-js'
+import { loadStripe, type Stripe } from '@stripe/stripe-js'
 
 // Load Stripe.js asynchronously
 // Using environment variable for publishable key
@@ -37,24 +37,14 @@ export interface CheckoutSessionParams {
 }
 
 /**
- * Redirect to Stripe Checkout
+ * Redirect to Stripe Checkout using Checkout URL
+ * In Stripe v8+, client-side redirect is done via window.location
+ * The backend should return the checkout URL from the session
  *
- * @param sessionId - Checkout session ID from backend
+ * @param checkoutUrl - Checkout URL from backend session
  */
-export const redirectToCheckout = async (sessionId: string): Promise<void> => {
-  const stripe = await getStripe()
-  if (!stripe) {
-    throw new Error('Stripe failed to load')
-  }
-
-  const { error } = await stripe.redirectToCheckout({
-    sessionId,
-  })
-
-  if (error) {
-    console.error('Stripe checkout error:', error)
-    throw error
-  }
+export const redirectToCheckout = async (checkoutUrl: string): Promise<void> => {
+  window.location.href = checkoutUrl
 }
 
 /**
