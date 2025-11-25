@@ -44,6 +44,11 @@ export interface CheckoutSessionParams {
  * @param checkoutUrl - Checkout URL from backend session
  */
 export const redirectToCheckout = async (checkoutUrl: string): Promise<void> => {
+  // Validate URL to prevent open redirect vulnerabilities
+  const url = new URL(checkoutUrl)
+  if (!url.hostname.endsWith('.stripe.com')) {
+    throw new Error('Invalid checkout URL: must be a Stripe domain')
+  }
   window.location.href = checkoutUrl
 }
 
