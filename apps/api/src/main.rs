@@ -3,15 +3,15 @@ use axum::{
     Router,
 };
 use std::net::SocketAddr;
-use tower_http::cors::{CorsLayer, Any};
+use tower_http::cors::{Any, CorsLayer};
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 use utoipa::OpenApi;
 use utoipa_swagger_ui::SwaggerUi;
 
-mod routes;
+mod db;
 mod handlers;
 mod models;
-mod db;
+mod routes;
 
 #[derive(Clone)]
 pub struct AppState {
@@ -61,18 +61,23 @@ async fn main() {
     let state = AppState {
         stripe_secret_key: std::env::var("STRIPE_SECRET_KEY")
             .expect("STRIPE_SECRET_KEY must be set"),
-        stripe_webhook_secret: std::env::var("STRIPE_WEBHOOK_SECRET")
-            .unwrap_or_else(|_| {
-                tracing::warn!("STRIPE_WEBHOOK_SECRET not set, webhooks will fail");
-                String::new()
-            }),
+        stripe_webhook_secret: std::env::var("STRIPE_WEBHOOK_SECRET").unwrap_or_else(|_| {
+            tracing::warn!("STRIPE_WEBHOOK_SECRET not set, webhooks will fail");
+            String::new()
+        }),
     };
 
     // Build our application with routes
     let app = Router::new()
         .route("/health", get(handlers::health::health_check))
-        .route("/api/checkout/create-session", post(handlers::checkout::create_checkout_session))
-        .route("/api/webhooks/stripe", post(handlers::webhooks::stripe_webhook))
+        .route(
+            "/api/checkout/create-session",
+            post(handlers::checkout::create_checkout_session),
+        )
+        .route(
+            "/api/webhooks/stripe",
+            post(handlers::webhooks::stripe_webhook),
+        )
         .merge(SwaggerUi::new("/docs").url("/api-docs/openapi.json", ApiDoc::openapi()))
         .with_state(state)
         .layer(

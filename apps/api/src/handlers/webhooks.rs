@@ -55,7 +55,10 @@ fn verify_signature(payload: &str, signature: &str, secret: &str) -> Result<(), 
         .as_secs() as i64;
 
     if (current_time - timestamp).abs() > 300 {
-        tracing::error!("Webhook timestamp too old: {} seconds", current_time - timestamp);
+        tracing::error!(
+            "Webhook timestamp too old: {} seconds",
+            current_time - timestamp
+        );
         return Err(StatusCode::BAD_REQUEST);
     }
 
@@ -142,8 +145,14 @@ pub async fn stripe_webhook(
     match event_type {
         "checkout.session.completed" => {
             if let Some(session) = event.get("data").and_then(|d| d.get("object")) {
-                let session_id = session.get("id").and_then(|v| v.as_str()).unwrap_or("unknown");
-                let payment_status = session.get("payment_status").and_then(|v| v.as_str()).unwrap_or("unknown");
+                let session_id = session
+                    .get("id")
+                    .and_then(|v| v.as_str())
+                    .unwrap_or("unknown");
+                let payment_status = session
+                    .get("payment_status")
+                    .and_then(|v| v.as_str())
+                    .unwrap_or("unknown");
                 let customer_email = session
                     .get("customer_details")
                     .and_then(|d| d.get("email"))

@@ -1,15 +1,9 @@
-use axum::{
-    extract::State,
-    http::StatusCode,
-    Json,
-};
+use axum::{extract::State, http::StatusCode, Json};
 use serde::{Deserialize, Serialize};
 use stripe::{
-    CheckoutSession, CheckoutSessionMode, Client,
-    CreateCheckoutSession, CreateCheckoutSessionLineItems,
-    CreateCheckoutSessionLineItemsPriceData,
-    CreateCheckoutSessionLineItemsPriceDataProductData,
-    Currency,
+    CheckoutSession, CheckoutSessionMode, Client, CreateCheckoutSession,
+    CreateCheckoutSessionLineItems, CreateCheckoutSessionLineItemsPriceData,
+    CreateCheckoutSessionLineItemsPriceDataProductData, Currency,
 };
 use utoipa::ToSchema;
 
@@ -77,7 +71,10 @@ pub async fn create_checkout_session(
     State(state): State<AppState>,
     Json(payload): Json<CreateCheckoutSessionRequest>,
 ) -> Result<Json<CreateCheckoutSessionResponse>, (StatusCode, Json<ErrorResponse>)> {
-    tracing::info!("Creating checkout session for quote_id: {}", payload.quote_id);
+    tracing::info!(
+        "Creating checkout session for quote_id: {}",
+        payload.quote_id
+    );
 
     // Validate amount
     if payload.total_amount <= 0 {
@@ -91,15 +88,19 @@ pub async fn create_checkout_session(
     }
 
     // Set default URLs if not provided
-    let success_url = payload
-        .success_url
-        .unwrap_or_else(|| format!("{}/checkout/success?session_id={{CHECKOUT_SESSION_ID}}",
-            std::env::var("FRONTEND_URL").unwrap_or_else(|_| "http://localhost:5173".to_string())));
+    let success_url = payload.success_url.unwrap_or_else(|| {
+        format!(
+            "{}/checkout/success?session_id={{CHECKOUT_SESSION_ID}}",
+            std::env::var("FRONTEND_URL").unwrap_or_else(|_| "http://localhost:5173".to_string())
+        )
+    });
 
-    let cancel_url = payload
-        .cancel_url
-        .unwrap_or_else(|| format!("{}/checkout/cancel",
-            std::env::var("FRONTEND_URL").unwrap_or_else(|_| "http://localhost:5173".to_string())));
+    let cancel_url = payload.cancel_url.unwrap_or_else(|| {
+        format!(
+            "{}/checkout/cancel",
+            std::env::var("FRONTEND_URL").unwrap_or_else(|_| "http://localhost:5173".to_string())
+        )
+    });
 
     // Create Stripe checkout session
     let client = Client::new(state.stripe_secret_key);
@@ -113,9 +114,10 @@ pub async fn create_checkout_session(
             currency: Currency::USD,
             unit_amount: Some(payload.quote_details.base_price),
             product_data: Some(CreateCheckoutSessionLineItemsPriceDataProductData {
-                name: format!("Powder Coating - {} ({})",
-                    payload.quote_details.material,
-                    payload.quote_details.prep_level),
+                name: format!(
+                    "Powder Coating - {} ({})",
+                    payload.quote_details.material, payload.quote_details.prep_level
+                ),
                 description: Some(format!("Quantity: {}", payload.quote_details.quantity)),
                 ..Default::default()
             }),
@@ -173,8 +175,14 @@ pub async fn create_checkout_session(
     // Add metadata for tracking
     let mut metadata = std::collections::HashMap::new();
     metadata.insert("quote_id".to_string(), payload.quote_id.clone());
-    metadata.insert("material".to_string(), payload.quote_details.material.clone());
-    metadata.insert("quantity".to_string(), payload.quote_details.quantity.to_string());
+    metadata.insert(
+        "material".to_string(),
+        payload.quote_details.material.clone(),
+    );
+    metadata.insert(
+        "quantity".to_string(),
+        payload.quote_details.quantity.to_string(),
+    );
     params.metadata = Some(metadata);
 
     // Create session via Stripe API

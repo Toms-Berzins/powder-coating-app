@@ -17,6 +17,8 @@ import {
   prepLevelInfo,
   type QuoteInput,
   type QuoteOutput,
+  type Material,
+  type PrepLevel,
 } from '@/lib/quote-schema'
 import { calculateQuote } from '@/lib/quote-calculator'
 import QuotePriceDisplay from './QuotePriceDisplay'
@@ -324,7 +326,7 @@ export default function QuoteForm() {
             <CardContent>
               <RadioGroup
                 value={material}
-                onValueChange={(value) => setValue('material', value as any)}
+                onValueChange={(value) => setValue('material', value as Material)}
               >
                 {Object.entries(materialInfo).map(([key, info]) => (
                   <RadioGroupItem key={key} value={key}>
@@ -374,7 +376,7 @@ export default function QuoteForm() {
             <CardContent>
               <RadioGroup
                 value={prep_level}
-                onValueChange={(value) => setValue('prep_level', value as any)}
+                onValueChange={(value) => setValue('prep_level', value as PrepLevel)}
               >
                 {Object.entries(prepLevelInfo).map(([key, info]) => (
                   <RadioGroupItem key={key} value={key}>
