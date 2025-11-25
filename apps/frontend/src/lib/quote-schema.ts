@@ -51,7 +51,7 @@ export const quoteSchema = z.object({
     .max(1000, 'Please contact us for quantities over 1000'),
 
   // Rush order flag
-  is_rush: z.boolean().default(false),
+  is_rush: z.boolean(),
 })
 
 export type QuoteInput = z.infer<typeof quoteSchema>

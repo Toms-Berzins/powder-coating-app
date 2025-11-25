@@ -36,9 +36,9 @@ pub enum Material {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum PrepLevel {
-    Clean,        // Basic cleaning
-    BlastClean,   // Blast + clean
-    BlastPrime,   // Blast + prime + clean
+    Clean,      // Basic cleaning
+    BlastClean, // Blast + clean
+    BlastPrime, // Blast + prime + clean
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -53,11 +53,11 @@ pub struct QuoteOutput {
 /// Calculate quote price (native Rust function)
 pub fn calculate_quote(input: &QuoteInput) -> QuoteOutput {
     // Calculate surface area (simplified - treating as a box)
-    let surface_area = 2.0 * (
-        input.length_mm * input.width_mm +
-        input.length_mm * input.height_mm +
-        input.width_mm * input.height_mm
-    ) / 1_000_000.0; // Convert mm² to m²
+    let surface_area = 2.0
+        * (input.length_mm * input.width_mm
+            + input.length_mm * input.height_mm
+            + input.width_mm * input.height_mm)
+        / 1_000_000.0; // Convert mm² to m²
 
     // Base price per m² (EUR)
     let base_rate = 25.0;
